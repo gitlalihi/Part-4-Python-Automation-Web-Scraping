@@ -22,15 +22,15 @@ def can_fetch_url(r, user_agent, url):
     return r.can_fetch(user_agent, url)
 
 def main():
-    base_url = 'your target site'
-    user_agent = 'your user-agent name'
+    base_url = 'your target-site'
+    user_agent = 'your user_agent'
     robots_content = fetch_robots_txt(base_url)
     if robots_content:
         # Step 2: Parse robots.txt
         rp = parse_robots_txt(robots_content)
 
         # Step 3: Check if the scrapper bot is allowed to access a specific URL
-        sample_url = urljoin(base_url, 'target site/some/page')
+        sample_url = urljoin(base_url, 'target\some\page')
         if can_fetch_url(rp, user_agent, sample_url):
              # lOGIC FOR SCRAPING here
              #.....
